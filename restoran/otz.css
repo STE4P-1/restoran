@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box; /* Убираем отступы и границы */
+}
+
+html, body {
+    height: 100%; /* Устанавливаем высоту 100% */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Стиль для общего контейнера с фоном */
+.container {
+    min-height: 100vh; /* Минимальная высота равна высоте окна */
+    position: relative; /* Для позиционирования псевдоэлемента */
+    background: url("https://static.tildacdn.com/tild3038-3735-4366-b934-333763366539/Y2U-NkFSfkrStzigT-6Y.jpg") center/cover no-repeat;
+    color: #ffffff; /* Белый цвет текста для контраста с затемнением */
+}
+
+/* Затемнение фона с помощью псевдоэлемента */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачное затемнение */
+    z-index: 0; /* Убеждаемся, что затемнение за содержимым (ноль или отрицательное значение) */
+}
+
+/* Убедитесь, что содержимое контейнера имеет больший z-index */
+.container > * {
+    position: relative; /* Чтобы содержимое отображалось поверх затемнения */
+    z-index: 1; /* Повышаем приоритет содержимого над затемнением */
+}
+
+
+
+
+/* Стиль для заголовка (для лучшей видимости на затемненном фоне) */
+.otzv-title {
+    font-family: 'Tinos', serif;
+    font-size: 54px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 50px; /* Уменьшаем отступ сверху */
+    margin-bottom: 50px;
+    color: #f9f9f9; /* Более светлый цвет для контраста */
+}
+.otzv-title span {
+    color: #ff9900;
+}
+
+/* Форма для добавления комментария */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.add-comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.rating-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 32px;
+}
+
+.rating-input .star {
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.rating-input .star.active,
+.rating-input .star.hover {
+    color: gold;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.submit-button {
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e68c00;
+}
+
+
+
+
+
+/* Блок с комментариями */
+.comments-block {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment .rating {
+    text-align: center;
+    font-size: 24px;
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.comment-content {
+    text-align: center;
+}
+
+.comment-text {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    font-size: 16px;
+    color: #777;
+    font-style: italic;
+}
+
+
+
+/* Контейнер для формы и комментариев */
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Стиль для формы */
+.form-container {
+    margin-bottom: 30px; /* Отступ между формой и комментариями */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #f9f9f9; /* Цвет фона формы */
+    border: 1px solid #e0e0e0; /* Граница формы */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Стиль для блока с комментариями */
+.comments-block {
+    padding: 15px; /* Внутренние отступы */
+}
+
+
+
+
+.num {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s linear;
+}
+
+.num:hover {
+    color: #FF7400;
+}

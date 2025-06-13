@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.banner{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/736x/18/3e/ea/183eea600ba9290156a9fae5db488aad.jpg) center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 420px 420px;
+}
+.card-img{
+    border-radius: 2%;
+    background: url("img/planirovka.png") center/cover no-repeat;
+}
+.banner h2{
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+.card-content{
+    border-radius: 2%;
+    background: #fff;
+    height: 420px;
+}
+.card-content h3{
+    text-align: center;
+    color: #000;
+    padding: 85px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+.form-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+form select, form input{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+}
+form input[type = text], form input[type = number], form input::placeholder, select{
+    color: #9a9a9a;
+}
+form input[type = submit]{
+    border: none;
+    color: #fff;
+    background: #f2745f;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Темный полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Tinos', serif;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ff8c00; /* Оранжевый цвет при наведении */
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/**  ==============      **/
+
+
+
+
+@media(max-width: 992px){
+    .card-container{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img{
+        height: 330px;
+    }
+}
+
+
+/* Медиа-запросы для адаптации под планшеты 768px и ниже */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        padding: 10px; /* Добавляем отступы вокруг контейнера */
+    }
+    .card-img, .card-content {
+        width: 100%; /* Полная ширина */
+        margin: 0 auto; /* Центрируем элементы */
+    }
+    .card-img {
+        height: 700px;
+    }
+    .card-content {
+        padding: 10px;
+    }
+    .form-row select,
+    .form-row input {
+        width: 100%; /* Возвращаем полную ширину полям формы */
+        padding: 8px; /* Сохраняем внутренние отступы */
+        box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+    .banner h2 {
+        font-size: 1.5em;
+        margin-top: 10px; /* Добавляем небольшой отступ сверху */
+    }
+    .modal-content {
+        width: 90%;
+        padding: 10px;
+    }
+    .icon {
+        font-size: 30px;
+    }
+}
+
+
+/* Медиа-запросы для адаптации под экраны 900px и ниже */
+@media (max-width: 900px) {
+    .card-container {
+        flex-direction: column;
+        padding: 15px; /* Увеличиваем отступы вокруг контейнера */
+    }
+    .card-img, .card-content {
+        width: 100%; /* Полная ширина */
+        margin: 0 auto; /* Центрируем элементы */
+    }
+    .card-img {
+        height: 700px; /* Уменьшаем высоту изображения для лучшей пропорции */
+    }
+    .card-content {
+        padding: 15px; /* Увеличиваем внутренние отступы */
+    }
+    .form-row select,
+    .form-row input {
+        width: 100%; /* Полная ширина полей формы */
+        padding: 10px; /* Увеличиваем внутренние отступы */
+        font-size: 16px; /* Увеличиваем размер шрифта */
+        box-sizing: border-box;
+    }
+    .banner h2 {
+        font-size: 1.8em; /* Увеличиваем размер заголовка */
+        margin-top: 15px; /* Небольшой отступ сверху */
+    }
+    .modal-content {
+        width: 85%; /* Сlightly уменьшаем ширину модального окна */
+        padding: 15px; /* Увеличиваем отступы внутри модального окна */
+    }
+    .icon {
+        font-size: 35px; /* Увеличиваем размер иконок */
+    }
+}
+
+
+/* Медиа-запрос для адаптации под экраны от 900px до 992px */
+@media (min-width: 900px) and (max-width: 992px) {
+    .card-container {
+        flex-direction: column;
+        padding: 20px; /* Увеличиваем отступы вокруг контейнера */
+    }
+    .card-img, .card-content {
+        width: 100%; /* Полная ширина */
+        margin: 0 auto; /* Центрируем элементы */
+    }
+    .card-img {
+        height: 500px; /* Адаптируем высоту изображения */
+    }
+    .card-content {
+        padding: 20px; /* Увеличиваем внутренние отступы */
+    }
+    .form-row select,
+    .form-row input {
+        width: 100%; /* Полная ширина полей формы */
+        padding: 12px; /* Немного увеличиваем внутренние отступы */
+        font-size: 16px; /* Размер шрифта оставляем таким же */
+        box-sizing: border-box;
+    }
+    .banner h2 {
+        font-size: 2em; /* Адаптируем размер заголовка */
+        margin-top: 20px; /* Небольшой отступ сверху */
+    }
+    .modal-content {
+        width: 80%; /* Сlightly уменьшаем ширину модального окна */
+        padding: 20px; /* Увеличиваем отступы внутри модального окна */
+    }
+    .icon {
+        font-size: 30px; /* Адаптируем размер иконок */
+    }
+}

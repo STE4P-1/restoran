@@ -1,0 +1,171 @@
+/* Основные стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative; /* Добавляем относительное позиционирование для body */
+    overflow: hidden; /* Убираем возможные скроллы при абсолютном позиционировании */
+}
+
+/* Контейнер формы */
+.delivery-form-container {
+    max-width: 500px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контейнера */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Для корректного позиционирования над фоном */
+}
+
+/* Фоновая картинка с затемнением */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.wallpaperscraft.ru/image/single/restoran_stol_interer_39288_1920x1080.jpg'); /* Путь к фоновой картинке */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Чтобы изображение было под всем содержимым */
+}
+
+/* Затемнение поверх фоновой картинки */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный цвет для затемнения */
+    z-index: -1; /* Чтобы затемнение было между картинкой и контентом */
+}
+
+/* Заголовок формы */
+.delivery-form-container h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Группа полей формы */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9900;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e68c00;
+}
+
+
+.p{
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+}
+
+
+
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 425px) {
+    body {
+        padding: 20px; /* Добавляем отступы по краям для мобильных устройств */
+    }
+
+    .delivery-form-container {
+        padding: 20px; /* Уменьшаем отступы внутри контейнера */
+    }
+
+    .delivery-form-container h2 {
+        font-size: 20px; /* Уменьшаем размер заголовка */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px; /* Уменьшаем размер шрифта в полях ввода */
+    }
+
+    .submit-btn {
+        padding: 10px; /* Уменьшаем отступы в кнопке */
+        font-size: 14px; /* Уменьшаем размер шрифта в кнопке */
+    }
+}
+
+
+
+/* Адаптация для разрешения 426-500px */
+@media (min-width: 426px) and (max-width: 500px) {
+    body {
+        padding: 25px; /* Немного увеличиваем отступы по краям */
+    }
+    .delivery-form-container {
+        padding: 25px; /* Увеличиваем отступы внутри контейнера */
+    }
+    .delivery-form-container h2 {
+        font-size: 22px; /* Сlightly увеличиваем размер заголовка */
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 15px; /* Немного увеличиваем размер шрифта в полях ввода */
+        padding: 10px; /* Добавляем небольшие отступы внутри полей */
+    }
+    .submit-btn {
+        padding: 12px; /* Увеличиваем отступы в кнопке */
+        font-size: 15px; /* Увеличиваем размер шрифта в кнопке */
+    }
+}
